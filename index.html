@@ -12,33 +12,37 @@
    DESIGN TOKENS
    ═══════════════════════════════════════════ */
 :root {
-  /* Palette — Ocean + Luxury + Italian Authority */
-  --navy: #0B1D3A;
-  --navy-light: #132B52;
-  --ocean: #1B4F72;
-  --ocean-mid: #2471A3;
-  --azure: #3498DB;
-  --gold: #C5A55A;
-  --gold-light: #D4B96E;
-  --gold-muted: #B89B4A;
-  --cream: #FAF8F5;
-  --warm-white: #FDFCFA;
-  --stone: #E8E4DE;
-  --stone-dark: #C9C3BA;
-  --text-primary: #0B1D3A;
-  --text-secondary: #4A5568;
-  --text-muted: #718096;
+  /* Palette — Adapted from JCA logo: navy + ocean blue + white */
+  --navy: #0A1C36;
+  --navy-light: #112D4E;
+  --ocean: #1A4971;
+  --ocean-mid: #2B6DA3;
+  --azure: #4A9FD9;
+  --azure-light: #6BB8E8;
+  --accent: #2B6DA3;
+  --accent-light: #4A9FD9;
+  --accent-hover: #1A4971;
+  --gold: #2B6DA3;
+  --gold-light: #4A9FD9;
+  --gold-muted: #1A4971;
+  --cream: #F4F8FC;
+  --warm-white: #F8FBFE;
+  --stone: #DCE8F1;
+  --stone-dark: #B8CCDB;
+  --text-primary: #0A1C36;
+  --text-secondary: #3D5A73;
+  --text-muted: #6B8CA6;
   --surface: #FFFFFF;
-  --surface-alt: #F7F5F2;
+  --surface-alt: #F4F8FC;
   --surface-elevated: #FFFFFF;
-  --border: #E2DDD6;
-  --border-light: #EDE9E3;
-  --hero-overlay: rgba(11, 29, 58, 0.72);
+  --border: #D0DEE9;
+  --border-light: #E4EDF4;
+  --hero-overlay: rgba(10, 28, 54, 0.72);
   --backdrop: rgba(255, 255, 255, 0.82);
-  --shadow-sm: 0 1px 3px rgba(11,29,58,0.06);
-  --shadow-md: 0 4px 16px rgba(11,29,58,0.08);
-  --shadow-lg: 0 12px 40px rgba(11,29,58,0.12);
-  --shadow-xl: 0 20px 60px rgba(11,29,58,0.16);
+  --shadow-sm: 0 1px 3px rgba(10,28,54,0.06);
+  --shadow-md: 0 4px 16px rgba(10,28,54,0.08);
+  --shadow-lg: 0 12px 40px rgba(10,28,54,0.12);
+  --shadow-xl: 0 20px 60px rgba(10,28,54,0.16);
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -50,24 +54,26 @@
 }
 
 [data-theme="dark"] {
-  --text-primary: #F0EDE8;
-  --text-secondary: #B0A99F;
-  --text-muted: #887F74;
-  --surface: #0F1923;
-  --surface-alt: #162231;
-  --surface-elevated: #1A2D42;
-  --border: #243447;
-  --border-light: #1E2D3D;
-  --hero-overlay: rgba(8, 18, 35, 0.78);
-  --backdrop: rgba(15, 25, 35, 0.88);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.3);
-  --shadow-xl: 0 20px 60px rgba(0,0,0,0.35);
-  --cream: #0F1923;
-  --warm-white: #0F1923;
-  --stone: #1E2D3D;
-  --stone-dark: #2A3F54;
+  --text-primary: #E8F0F6;
+  --text-secondary: #9AB4C8;
+  --text-muted: #6B8CA6;
+  --surface: #0A1420;
+  --surface-alt: #0F1E2E;
+  --surface-elevated: #152A3E;
+  --border: #1E3A52;
+  --border-light: #162D42;
+  --hero-overlay: rgba(6, 14, 28, 0.82);
+  --backdrop: rgba(10, 20, 32, 0.92);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.25);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.35);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.4);
+  --cream: #0A1420;
+  --warm-white: #0A1420;
+  --stone: #162D42;
+  --stone-dark: #1E3A52;
+  --accent: #4A9FD9;
+  --accent-light: #6BB8E8;
 }
 
 /* ═══════════════════════════════════════════
@@ -114,19 +120,31 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 24px;
-  height: 72px;
+  padding: 0 48px;
+  height: 110px;
   display: flex;
   align-items: center;
+  background: transparent;
+  box-shadow: none;
   transition: background var(--transition), box-shadow var(--transition), height var(--transition);
 }
 
 .header.scrolled {
-  background: var(--backdrop);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
-  box-shadow: var(--shadow-sm);
-  height: 64px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .header {
+  background: #0F1923;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .header.scrolled {
+  background: #0F1923;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .header-inner {
@@ -134,7 +152,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -145,18 +163,15 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   z-index: 1001;
 }
 
-.logo svg { height: 36px; width: auto; }
-.logo-text {
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--text-primary);
+.logo img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
 }
 
-.header:not(.scrolled) .logo-text { color: #fff; }
-.header:not(.scrolled) .logo svg .logo-fill { fill: #fff; }
-.header:not(.scrolled) .logo svg .logo-accent { fill: var(--gold); }
+.header.scrolled .logo img {
+  height: 64px;
+}
 
 .nav-desktop {
   display: none;
@@ -169,18 +184,18 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 }
 
 .nav-desktop a {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: 0.01em;
-  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  color: rgba(255, 255, 255, 0.9);
   transition: color var(--transition);
   position: relative;
 }
 
-.header:not(.scrolled) .nav-desktop a { color: rgba(255,255,255,0.8); }
-.header:not(.scrolled) .nav-desktop a:hover { color: #fff; }
+.nav-desktop a:hover { color: #fff; }
 
-.nav-desktop a:hover { color: var(--text-primary); }
+.header.scrolled .nav-desktop a { color: var(--text-secondary); }
+.header.scrolled .nav-desktop a:hover { color: var(--navy); }
 
 .nav-desktop a::after {
   content: '';
@@ -189,7 +204,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gold);
+  background: var(--azure-light);
   transition: width var(--transition);
 }
 
@@ -213,9 +228,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   transition: all var(--transition);
 }
 
-.header:not(.scrolled) .theme-toggle { color: rgba(255,255,255,0.8); }
-.theme-toggle:hover { background: var(--surface-alt); color: var(--text-primary); }
-.header:not(.scrolled) .theme-toggle:hover { background: rgba(255,255,255,0.15); color: #fff; }
+.theme-toggle:hover { background: var(--surface-alt); color: var(--navy); }
 
 .theme-toggle svg { width: 20px; height: 20px; }
 .theme-toggle .icon-moon { display: none; }
@@ -224,20 +237,29 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 
 .btn-header {
   display: none;
-  padding: 10px 24px;
-  font-size: 14px;
+  padding: 16px 36px;
+  font-size: 18px;
   font-weight: 600;
   border-radius: var(--radius-sm);
-  background: var(--gold);
-  color: var(--navy);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  backdrop-filter: blur(8px);
   transition: all var(--transition);
+}
+
+.header.scrolled .btn-header {
+  background: var(--navy);
+  border: 1px solid var(--navy);
+  color: #fff;
+  backdrop-filter: none;
 }
 
 @media (min-width: 1024px) {
   .btn-header { display: inline-flex; }
 }
 
-.btn-header:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn-header:hover { background: var(--ocean); transform: translateY(-1px); }
 
 .hamburger {
   display: flex;
@@ -254,12 +276,14 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 .hamburger span {
   width: 22px;
   height: 2px;
-  background: var(--text-primary);
+  background: #fff;
   border-radius: 2px;
   transition: all var(--transition);
 }
 
-.header:not(.scrolled) .hamburger span { background: #fff; }
+.header.scrolled .hamburger span {
+  background: var(--navy);
+}
 
 .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.active span:nth-child(2) { opacity: 0; }
@@ -336,19 +360,19 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 }
 
 .btn-primary {
-  background: var(--gold);
+  background: #fff;
   color: var(--navy);
 }
 
-.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-primary:hover { background: var(--azure-light); color: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,0.2); }
 
 .btn-secondary {
   background: transparent;
   color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.4);
+  border: 1.5px solid rgba(255,255,255,0.35);
 }
 
-.btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+.btn-secondary:hover { border-color: var(--azure-light); color: var(--azure-light); background: rgba(74, 159, 217, 0.08); }
 
 .btn-outline {
   background: transparent;
@@ -370,40 +394,53 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: var(--navy);
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?w=1920&q=80') center/cover no-repeat;
+  overflow: hidden;
 }
 
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(11,29,58,0.5) 0%, rgba(11,29,58,0.75) 60%, rgba(11,29,58,0.9) 100%);
+.hero-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.15);
 }
+
+/* no overlay on video */
+
+/* no wave */
 
 .hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 800px;
-  padding: 120px 24px 80px;
+  max-width: 860px;
+  padding: 140px 24px 120px;
+}
+
+.hero-logo-large {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 36px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 24px;
-  background: rgba(197, 165, 90, 0.15);
-  border: 1px solid rgba(197, 165, 90, 0.4);
+  padding: 10px 28px;
+  background: rgba(74, 159, 217, 0.12);
+  border: 1px solid rgba(107, 184, 232, 0.35);
   border-radius: 100px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--gold-light);
+  color: var(--azure-light);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 32px;
@@ -422,15 +459,18 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 
 .hero h1 em {
   font-style: normal;
-  color: var(--gold);
+  background: linear-gradient(135deg, var(--azure-light) 0%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero-subtitle {
   font-size: clamp(16px, 2.2vw, 20px);
-  color: rgba(255,255,255,0.75);
-  line-height: 1.6;
-  max-width: 580px;
-  margin: 0 auto 40px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 44px;
 }
 
 .hero-cta {
@@ -442,15 +482,15 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 
 .hero-scroll {
   position: absolute;
-  bottom: 32px;
+  bottom: 100px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
+  z-index: 4;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.45);
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -499,7 +539,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 
 .stat-number .suffix {
   font-size: 0.6em;
-  color: var(--gold);
+  color: var(--azure);
 }
 
 .stat-label {
@@ -562,17 +602,24 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 .bento {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 12px;
 }
 
 @media (min-width: 768px) {
   .bento {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(180px, auto);
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
   }
-  .bento-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-  .bento-item:nth-child(4) { grid-column: span 2; }
-  .bento-item:nth-child(7) { grid-column: span 2; }
+  /* Row 1: Entertainment (wide left) + Cucina (right) */
+  .bento-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1 / 2; }
+  .bento-item:nth-child(2) { grid-column: 3 / 5; grid-row: 1 / 2; }
+  /* Row 2: F&B (small) + Housekeeping (tall, spans 2 rows) + Guest Services (small) */
+  .bento-item:nth-child(3) { grid-column: 1 / 2; grid-row: 2 / 3; }
+  .bento-item:nth-child(4) { grid-column: 2 / 4; grid-row: 2 / 4; }
+  .bento-item:nth-child(5) { grid-column: 4 / 5; grid-row: 2 / 3; }
+  /* Row 3: Casino (left) + Security (right) */
+  .bento-item:nth-child(6) { grid-column: 1 / 2; grid-row: 3 / 4; }
+  .bento-item:nth-child(7) { grid-column: 4 / 5; grid-row: 3 / 4; }
 }
 
 .bento-item {
@@ -706,7 +753,7 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
 .cta-section {
   position: relative;
   padding: 120px 0;
-  background: url('https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1920&q=80') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?w=1920&q=80') center/cover no-repeat;
   text-align: center;
   overflow: hidden;
 }
@@ -1084,105 +1131,6 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   line-height: 1.7;
 }
 
-/* ═══════════════════════════════════════════
-   CONTACT
-   ═══════════════════════════════════════════ */
-.contact {
-  padding: 100px 0 120px;
-  background: var(--surface-alt);
-}
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 48px;
-  margin-top: 48px;
-}
-
-@media (min-width: 768px) {
-  .contact-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
-}
-
-.contact-info-item {
-  display: flex;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-
-.contact-info-item svg {
-  width: 20px;
-  height: 20px;
-  color: var(--ocean-mid);
-  margin-top: 3px;
-  min-width: 20px;
-}
-
-[data-theme="dark"] .contact-info-item svg { color: var(--azure); }
-
-.contact-info-item h4 {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 4px;
-}
-
-.contact-info-item p {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.social-links {
-  display: flex;
-  gap: 12px;
-  margin-top: 32px;
-}
-
-.social-link {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-secondary);
-  transition: all var(--transition);
-}
-
-.social-link:hover { border-color: var(--ocean-mid); color: var(--ocean-mid); background: rgba(27,79,114,0.06); }
-
-.social-link svg { width: 18px; height: 18px; }
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-
-.form-group label {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.form-input {
-  padding: 12px 16px;
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  color: var(--text-primary);
-  min-height: 44px;
-  transition: border-color var(--transition);
-}
-
-.form-input:focus { outline: none; border-color: var(--ocean); }
-
-.form-input::placeholder { color: var(--text-muted); }
-
-textarea.form-input { min-height: 120px; resize: vertical; }
 
 /* ═══════════════════════════════════════════
    FOOTER
@@ -1205,8 +1153,10 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
 }
 
-.footer-brand .logo-text { color: #fff; }
-.footer-brand .logo svg .logo-fill { fill: #fff; }
+.footer-brand .logo img {
+  height: 72px;
+  filter: brightness(0) invert(1);
+}
 
 .footer-tagline {
   font-size: 14px;
@@ -1220,10 +1170,10 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   margin-top: 20px;
   padding: 12px 16px;
   border-radius: var(--radius-sm);
-  border: 1px solid rgba(197,165,90,0.3);
-  background: rgba(197,165,90,0.08);
+  border: 1px solid rgba(74, 159, 217, 0.3);
+  background: rgba(74, 159, 217, 0.08);
   font-size: 12px;
-  color: var(--gold-light);
+  color: var(--azure-light);
   font-weight: 500;
   line-height: 1.5;
   max-width: 320px;
@@ -1247,7 +1197,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   transition: color var(--transition);
 }
 
-.footer-links a:hover { color: var(--gold-light); }
+.footer-links a:hover { color: var(--azure-light); }
 
 .footer-bottom {
   display: flex;
@@ -1259,6 +1209,34 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   font-size: 13px;
   color: rgba(255,255,255,0.35);
 }
+
+/* ═══════════════════════════════════════════
+   FORM ELEMENTS
+   ═══════════════════════════════════════════ */
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 15px;
+  min-height: 44px;
+  transition: border-color var(--transition);
+  box-sizing: border-box;
+}
+
+.form-input:focus { outline: none; border-color: var(--ocean); }
+.form-input::placeholder { color: var(--text-muted); }
+textarea.form-input { min-height: 120px; resize: vertical; }
 
 /* ═══════════════════════════════════════════
    APPLICATION MODAL
@@ -1367,7 +1345,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   gap: 16px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .form-row { grid-template-columns: 1fr; }
 }
 
@@ -1507,18 +1485,142 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 }
 
 /* ═══════════════════════════════════════════
-   RESPONSIVE TWEAKS
+   RESPONSIVE — TABLET (max 1023px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1023px) {
+  .header { padding: 0 24px; height: 80px; }
+  .header.scrolled { height: 64px; }
+  .logo img { height: 64px; }
+  .header.scrolled .logo img { height: 52px; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — MOBILE (max 767px)
    ═══════════════════════════════════════════ */
 @media (max-width: 767px) {
-  .hero-content { padding: 100px 20px 60px; }
-  .hero-badge { font-size: 11px; padding: 8px 16px; }
-  .stats { padding: 56px 0; }
-  .departments, .positions, .apply-section { padding: 80px 0; }
-  .how-it-works, .about, .contact { padding: 80px 0; }
-  .cta-section { padding: 80px 0; }
-  .positions-header { flex-direction: column; align-items: flex-start; }
-  .filters { width: 100%; }
+  /* Header */
+  .header { padding: 0 16px; height: 70px; }
+  .header.scrolled { height: 60px; }
+  .logo img { height: 56px; }
+  .header.scrolled .logo img { height: 48px; }
+
+  /* Hero */
+  .hero { min-height: 100svh; }
+  .hero-content { padding: 100px 20px 80px; max-width: 100%; }
+  .hero-badge { font-size: 10px; padding: 8px 14px; gap: 6px; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(28px, 8vw, 42px); margin-bottom: 16px; }
+  .hero-subtitle { font-size: 15px; margin-bottom: 32px; }
+  .hero-cta { flex-direction: column; align-items: center; gap: 12px; }
+  .hero-cta .btn { width: 100%; max-width: 280px; }
+  .hero-scroll { bottom: 40px; }
+  .hero-bg video { transform: none; object-position: 15% center; }
+
+  /* Stats */
+  .stats { padding: 48px 0; }
+  .stats-grid { gap: 24px; }
+  .stat-number { font-size: clamp(28px, 8vw, 40px); }
+  .stat-label { font-size: 12px; }
+
+  /* Sections common */
+  .section-title { font-size: clamp(24px, 6vw, 32px); }
+  .section-subtitle { font-size: 15px; margin-top: 12px; }
+
+  /* Departments / Bento */
+  .departments { padding: 64px 0 56px; }
+  .departments-header { margin-bottom: 32px; }
+  .bento { gap: 10px; }
+  .bento-item { min-height: 160px; padding: 20px; }
+  .bento-item h3 { font-size: 18px; }
+  .bento-item p { font-size: 13px; }
+
+  /* How it works */
+  .how-it-works { padding: 64px 0 72px; }
+  .how-it-works-header { margin-bottom: 40px; }
+  .step { padding: 28px 24px; }
+  .step-number { font-size: 48px; }
+  .step h3 { font-size: 18px; }
+  .step p { font-size: 14px; }
+
+  /* CTA */
+  .cta-section { padding: 64px 0; }
+  .cta-section h2 { font-size: clamp(24px, 6vw, 32px); }
+  .cta-section p { font-size: 15px; margin-bottom: 28px; }
+
+  /* Positions */
+  .positions { padding: 64px 0; }
+  .positions-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .filters { width: 100%; flex-direction: column; }
   .filter-select { width: 100%; }
+  .position-card { padding: 20px; }
+  .position-card h3 { font-size: 16px; }
+  .position-card p { font-size: 13px; }
+
+  /* About */
+  .about { padding: 64px 0 56px; }
+  .about-grid { gap: 40px; margin-top: 32px; }
+  .about-story h3 { font-size: 20px; }
+  .about-story p { font-size: 14px; }
+  .license-box { padding: 24px; }
+  .license-box h4 { font-size: 16px; }
+  .license-box p { font-size: 14px; }
+  .value-item { padding: 20px; }
+  .value-item h4 { font-size: 16px; }
+  .value-item p { font-size: 13px; }
+
+  /* How to apply */
+  .apply-section { padding: 64px 0; }
+  .apply-steps { margin-top: 40px; }
+  .apply-steps::before { left: 23px; }
+  .apply-step { gap: 16px; padding: 20px 0; }
+  .apply-step-content h3 { font-size: 17px; }
+  .apply-step-content p { font-size: 14px; }
+  .accordion { margin-top: 40px; }
+  .accordion-trigger { padding: 16px 20px; font-size: 14px; }
+  .accordion-body-inner { padding: 0 20px 16px; font-size: 14px; }
+
+  /* Footer */
+  .footer { padding: 48px 0 24px; }
+  .footer-grid { gap: 32px; padding-bottom: 32px; }
+  .footer-brand .logo img { height: 56px; }
+  .footer-tagline { font-size: 13px; }
+  .footer-badge { font-size: 11px; padding: 10px 14px; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 8px; font-size: 12px; }
+
+  /* Modal */
+  .modal-overlay { padding: 0; align-items: flex-end; }
+  .modal { max-width: 100%; max-height: 92dvh; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+  .modal-header { padding: 20px 20px 0; }
+  .modal-header h2 { font-size: 20px; }
+  .modal-body { padding: 20px; }
+  .modal-actions { padding: 0 20px 20px; flex-direction: column; }
+  .modal-actions .btn { width: 100%; }
+  .progress-bar { margin: 16px 20px; }
+  .progress-labels { padding: 10px 20px 0; }
+  .progress-label { font-size: 11px; }
+  .modal-step .form-group label { font-size: 13px; }
+  .modal-step .form-group input,
+  .modal-step .form-group select,
+  .modal-step .form-group textarea { font-size: 16px; } /* prevents iOS zoom */
+
+  /* Mobile nav drawer */
+  .mobile-nav { padding: 80px 24px 32px; }
+  .mobile-nav a { font-size: 18px; padding: 14px 0; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE (max 380px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .header { padding: 0 12px; }
+  .hero-content { padding: 90px 16px 60px; }
+  .hero h1 { font-size: 26px; }
+  .hero-badge { font-size: 9px; padding: 6px 12px; }
+  .container { padding: 0 16px; }
+  .bento-item { min-height: 140px; padding: 16px; }
+  .bento-item h3 { font-size: 16px; }
+  .step { padding: 24px 20px; }
+  .position-card { padding: 16px; }
+  .modal-header h2 { font-size: 18px; }
 }
 </style>
 </head>
@@ -1530,12 +1632,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
 <header class="header" id="header">
   <div class="header-inner">
     <a href="#" class="logo">
-      <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path class="logo-fill" d="M8 8h6v18c0 3.3-2.7 6-6 6H6v-4h2c1.1 0 2-.9 2-2V8zm-2 24h2V8H4v20c0 2.2 1.8 4 4 4h2z" fill="#0B1D3A"/>
-        <path class="logo-accent" d="M24 8c-5.5 0-10 4.5-10 10s4.5 10 10 10c2.8 0 5.3-1.1 7.1-2.9l-2.8-2.8C27 23.4 25.6 24 24 24c-3.3 0-6-2.7-6-6s2.7-6 6-6c1.6 0 3 .6 4.2 1.7l2.8-2.8C29.3 9.1 26.8 8 24 8z" fill="#C5A55A"/>
-        <path class="logo-fill" d="M44 8l-8 24h4.5l1.6-5h9.8l1.6 5H58L50 8h-6zm-1 15l3-9.4L49 23h-6z" fill="#0B1D3A"/>
-        <text x="66" y="28" font-family="General Sans, sans-serif" font-size="10" font-weight="600" letter-spacing="0.12em" class="logo-fill" fill="#0B1D3A">RECRUITMENT</text>
-      </svg>
+      <img src="logo.webp" alt="JCA Recruitment">
     </a>
 
     <nav class="nav-desktop">
@@ -1543,15 +1640,10 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       <a href="#positions">Posizioni</a>
       <a href="#about">Chi Siamo</a>
       <a href="#apply">Candidatura</a>
-      <a href="#contact">Contatti</a>
     </nav>
 
     <div class="header-actions">
-      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambia tema">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-      <a href="#" class="btn-header" onclick="openModal(); return false;">Candidati Ora</a>
+<a href="#" class="btn-header" onclick="openModal(); return false;">Candidati Ora</a>
       <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -1565,7 +1657,6 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   <a href="#positions" onclick="toggleMenu()">Posizioni</a>
   <a href="#about" onclick="toggleMenu()">Chi Siamo</a>
   <a href="#apply" onclick="toggleMenu()">Candidatura</a>
-  <a href="#contact" onclick="toggleMenu()">Contatti</a>
   <a href="#" class="btn-mobile-cta" onclick="toggleMenu(); openModal();">Candidati Ora</a>
 </nav>
 
@@ -1573,19 +1664,10 @@ textarea.form-input { min-height: 120px; resize: vertical; }
      HERO
      ═══════════════════════════════════════════ -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-badge">✦ Unica Agenzia Italiana Ufficiale Royal Caribbean ✦</div>
-    <h1>La tua carriera <em>inizia dal mare</em></h1>
-    <p class="hero-subtitle">JCA Recruitment è il partner esclusivo in Italia per il reclutamento del personale a bordo delle navi Royal Caribbean Group. Oltre 40 ruoli disponibili.</p>
-    <div class="hero-cta">
-      <a href="#positions" class="btn btn-primary">Scopri le Posizioni</a>
-      <a href="#apply" class="btn btn-secondary">Come Candidarsi</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scorri</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline>
+      <source src="https://careers.royalcaribbeangroup.com/wp-content/uploads/2026/05/VSWU-Career-Site-Video-Header_3.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
@@ -1626,56 +1708,58 @@ textarea.form-input { min-height: 120px; resize: vertical; }
       <p class="section-subtitle">Dalla cucina gourmet all'intrattenimento internazionale: trova il dipartimento che fa per te.</p>
     </div>
     <div class="bento">
-      <div class="bento-item reveal" onclick="filterByDept('Cucina')">
-        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=75" alt="Cucina" loading="lazy">
-        <div class="bento-item-content">
-          <h3>Cucina</h3>
-          <p>Chef, Sous Chef, Pastry Chef e altro</p>
-          <span class="dept-count">8 posizioni →</span>
-        </div>
-      </div>
-      <div class="bento-item reveal" onclick="filterByDept('Food & Beverage')">
-        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=75" alt="Food & Beverage" loading="lazy">
-        <div class="bento-item-content">
-          <h3>Food & Beverage</h3>
-          <p>Bartender, Waiter, Sommelier</p>
-          <span class="dept-count">7 posizioni →</span>
-        </div>
-      </div>
+      <!-- Row 1: wide left + wide right -->
       <div class="bento-item reveal" onclick="filterByDept('Entertainment')">
-        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=75" alt="Entertainment" loading="lazy">
+        <img src="images/entertainment.jpg" alt="Entertainment" loading="lazy">
         <div class="bento-item-content">
           <h3>Entertainment</h3>
           <p>Cruise Director, DJ, Performers</p>
           <span class="dept-count">5 posizioni →</span>
         </div>
       </div>
-      <div class="bento-item reveal" onclick="filterByDept('Housekeeping')">
-        <img src="https://images.unsplash.com/photo-1590490360182-c33d7f9d02f0?w=800&q=75" alt="Housekeeping" loading="lazy">
+      <div class="bento-item reveal" onclick="filterByDept('Cucina')">
+        <img src="images/cucina.jpg" alt="Cucina" loading="lazy">
         <div class="bento-item-content">
-          <h3>Housekeeping</h3>
-          <p>Stateroom Attendant, Supervisor, Laundry</p>
-          <span class="dept-count">5 posizioni →</span>
+          <h3>Cucina</h3>
+          <p>Chef, Sous Chef, Pastry Chef e altro</p>
+          <span class="dept-count">8 posizioni →</span>
         </div>
       </div>
-      <div class="bento-item reveal" onclick="filterByDept('Guest Services')">
-        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=75" alt="Guest Services" loading="lazy">
+      <!-- Row 2-3: small | Casino big center | small -->
+      <div class="bento-item reveal" onclick="filterByDept('Food & Beverage')">
+        <img src="images/fb.avif" alt="Food & Beverage" loading="lazy">
         <div class="bento-item-content">
-          <h3>Guest Services</h3>
-          <p>Purser, Guest Relations, Shore Excursions</p>
-          <span class="dept-count">4 posizioni →</span>
+          <h3>Food & Beverage</h3>
+          <p>Bartender, Waiter, Sommelier</p>
+          <span class="dept-count">7 posizioni →</span>
         </div>
       </div>
       <div class="bento-item reveal" onclick="filterByDept('Casino')">
-        <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&q=75" alt="Casino" loading="lazy">
+        <img src="images/casino.avif" alt="Casino" loading="lazy">
         <div class="bento-item-content">
           <h3>Casino</h3>
           <p>Dealer, Supervisor, Slot Manager</p>
           <span class="dept-count">4 posizioni →</span>
         </div>
       </div>
+      <div class="bento-item reveal" onclick="filterByDept('Guest Services')">
+        <img src="images/guest-services.jpg" alt="Guest Services" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Guest Services</h3>
+          <p>Purser, Guest Relations, Shore Excursions</p>
+          <span class="dept-count">4 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Housekeeping')">
+        <img src="images/housekeeping.jpg" alt="Housekeeping" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Housekeeping</h3>
+          <p>Stateroom Attendant, Supervisor, Laundry</p>
+          <span class="dept-count">5 posizioni →</span>
+        </div>
+      </div>
       <div class="bento-item reveal" onclick="filterByDept('Security')">
-        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=75" alt="Security & Deck" loading="lazy">
+        <img src="images/security.jpg" alt="Security & Deck" loading="lazy">
         <div class="bento-item-content">
           <h3>Security & Deck</h3>
           <p>Security Officer, Deck Cadet, Technicians</p>
@@ -1905,83 +1989,6 @@ textarea.form-input { min-height: 120px; resize: vertical; }
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-     CONTACT
-     ═══════════════════════════════════════════ -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="section-label reveal">Contatti</div>
-    <h2 class="section-title reveal">Parliamo</h2>
-    <p class="section-subtitle reveal">Hai domande? Scrivici o vieni a trovarci. Il nostro team è a disposizione.</p>
-
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div>
-            <h4>Sede</h4>
-            <p>Via Roma 42, 00184 Roma (RM)<br>Italia</p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <div>
-            <h4>Email</h4>
-            <p>careers@jcarecruitment.it</p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <div>
-            <h4>Telefono</h4>
-            <p>+39 06 123 4567</p>
-          </div>
-        </div>
-        <div class="contact-info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          <div>
-            <h4>Orari</h4>
-            <p>Lun — Ven: 9:00 — 18:00<br>Sab — Dom: Chiuso</p>
-          </div>
-        </div>
-
-        <div class="social-links">
-          <a href="#" class="social-link" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <form class="contact-form reveal" onsubmit="handleContactForm(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="contactName">Nome</label>
-            <input type="text" id="contactName" class="form-input" placeholder="Il tuo nome" required>
-          </div>
-          <div class="form-group">
-            <label for="contactEmail">Email</label>
-            <input type="email" id="contactEmail" class="form-input" placeholder="email@esempio.it" required>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="contactSubject">Oggetto</label>
-          <input type="text" id="contactSubject" class="form-input" placeholder="Di cosa vuoi parlare?">
-        </div>
-        <div class="form-group">
-          <label for="contactMessage">Messaggio</label>
-          <textarea id="contactMessage" class="form-input" placeholder="Scrivi il tuo messaggio..." required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Invia Messaggio</button>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════════════════════════════════════
      FOOTER
@@ -1991,12 +1998,7 @@ textarea.form-input { min-height: 120px; resize: vertical; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="logo-fill" d="M8 8h6v18c0 3.3-2.7 6-6 6H6v-4h2c1.1 0 2-.9 2-2V8zm-2 24h2V8H4v20c0 2.2 1.8 4 4 4h2z" fill="#fff"/>
-            <path class="logo-accent" d="M24 8c-5.5 0-10 4.5-10 10s4.5 10 10 10c2.8 0 5.3-1.1 7.1-2.9l-2.8-2.8C27 23.4 25.6 24 24 24c-3.3 0-6-2.7-6-6s2.7-6 6-6c1.6 0 3 .6 4.2 1.7l2.8-2.8C29.3 9.1 26.8 8 24 8z" fill="#C5A55A"/>
-            <path class="logo-fill" d="M44 8l-8 24h4.5l1.6-5h9.8l1.6 5H58L50 8h-6zm-1 15l3-9.4L49 23h-6z" fill="#fff"/>
-            <text x="66" y="28" font-family="General Sans, sans-serif" font-size="10" font-weight="600" letter-spacing="0.12em" class="logo-fill" fill="#fff">RECRUITMENT</text>
-          </svg>
+          <img src="logo.webp" alt="JCA Recruitment">
         </a>
         <p class="footer-tagline">Il tuo partner per una carriera internazionale a bordo delle navi Royal Caribbean.</p>
         <div class="footer-badge">Autorizzata da Royal Caribbean Group come Hiring Partner ufficiale per l'Italia</div>
@@ -2008,7 +2010,6 @@ textarea.form-input { min-height: 120px; resize: vertical; }
           <a href="#positions">Posizioni</a>
           <a href="#about">Chi Siamo</a>
           <a href="#apply">Come Candidarsi</a>
-          <a href="#contact">Contatti</a>
         </div>
       </div>
       <div>
@@ -2442,12 +2443,6 @@ function simulateUpload() {
   const fileName = document.getElementById('fileName');
   fileName.textContent = 'CV_Mario_Rossi.pdf';
   fileName.style.display = 'block';
-}
-
-function handleContactForm(e) {
-  e.preventDefault();
-  alert('Messaggio inviato! Ti risponderemo al più presto.');
-  e.target.reset();
 }
 
 /* ═══════════════════════════════════════════
