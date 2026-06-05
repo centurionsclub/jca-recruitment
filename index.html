@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="it" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JCA Recruitment — Unica Agenzia Italiana Ufficiale Royal Caribbean</title>
+<meta name="description" content="JCA Recruitment è l'unica agenzia italiana autorizzata da Royal Caribbean Group per il reclutamento del personale di bordo. Scopri le posizioni disponibili e candidati.">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   DESIGN TOKENS
+   ═══════════════════════════════════════════ */
+:root {
+  /* Palette — Ocean + Luxury + Italian Authority */
+  --navy: #0B1D3A;
+  --navy-light: #132B52;
+  --ocean: #1B4F72;
+  --ocean-mid: #2471A3;
+  --azure: #3498DB;
+  --gold: #C5A55A;
+  --gold-light: #D4B96E;
+  --gold-muted: #B89B4A;
+  --cream: #FAF8F5;
+  --warm-white: #FDFCFA;
+  --stone: #E8E4DE;
+  --stone-dark: #C9C3BA;
+  --text-primary: #0B1D3A;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  --surface: #FFFFFF;
+  --surface-alt: #F7F5F2;
+  --surface-elevated: #FFFFFF;
+  --border: #E2DDD6;
+  --border-light: #EDE9E3;
+  --hero-overlay: rgba(11, 29, 58, 0.72);
+  --backdrop: rgba(255, 255, 255, 0.82);
+  --shadow-sm: 0 1px 3px rgba(11,29,58,0.06);
+  --shadow-md: 0 4px 16px rgba(11,29,58,0.08);
+  --shadow-lg: 0 12px 40px rgba(11,29,58,0.12);
+  --shadow-xl: 0 20px 60px rgba(11,29,58,0.16);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --font-display: 'Cabinet Grotesk', sans-serif;
+  --font-body: 'General Sans', sans-serif;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --text-primary: #F0EDE8;
+  --text-secondary: #B0A99F;
+  --text-muted: #887F74;
+  --surface: #0F1923;
+  --surface-alt: #162231;
+  --surface-elevated: #1A2D42;
+  --border: #243447;
+  --border-light: #1E2D3D;
+  --hero-overlay: rgba(8, 18, 35, 0.78);
+  --backdrop: rgba(15, 25, 35, 0.88);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.25);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.3);
+  --shadow-xl: 0 20px 60px rgba(0,0,0,0.35);
+  --cream: #0F1923;
+  --warm-white: #0F1923;
+  --stone: #1E2D3D;
+  --stone-dark: #2A3F54;
+}
+
+/* ═══════════════════════════════════════════
+   RESET & BASE
+   ═══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background var(--transition), color var(--transition);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+input, textarea, select { font-family: inherit; font-size: inherit; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 1280px) {
+  .container { padding: 0 40px; }
+}
+
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  transition: background var(--transition), box-shadow var(--transition), height var(--transition);
+}
+
+.header.scrolled {
+  background: var(--backdrop);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  box-shadow: var(--shadow-sm);
+  height: 64px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1001;
+}
+
+.logo svg { height: 36px; width: auto; }
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.header:not(.scrolled) .logo-text { color: #fff; }
+.header:not(.scrolled) .logo svg .logo-fill { fill: #fff; }
+.header:not(.scrolled) .logo svg .logo-accent { fill: var(--gold); }
+
+.nav-desktop {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (min-width: 1024px) {
+  .nav-desktop { display: flex; }
+}
+
+.nav-desktop a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-secondary);
+  transition: color var(--transition);
+  position: relative;
+}
+
+.header:not(.scrolled) .nav-desktop a { color: rgba(255,255,255,0.8); }
+.header:not(.scrolled) .nav-desktop a:hover { color: #fff; }
+
+.nav-desktop a:hover { color: var(--text-primary); }
+
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width var(--transition);
+}
+
+.nav-desktop a:hover::after { width: 100%; }
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1001;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.header:not(.scrolled) .theme-toggle { color: rgba(255,255,255,0.8); }
+.theme-toggle:hover { background: var(--surface-alt); color: var(--text-primary); }
+.header:not(.scrolled) .theme-toggle:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+
+.btn-header {
+  display: none;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  background: var(--gold);
+  color: var(--navy);
+  transition: all var(--transition);
+}
+
+@media (min-width: 1024px) {
+  .btn-header { display: inline-flex; }
+}
+
+.btn-header:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  z-index: 1001;
+}
+
+@media (min-width: 1024px) {
+  .hamburger { display: none; }
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.header:not(.scrolled) .hamburger span { background: #fff; }
+
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile Drawer */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(380px, 85vw);
+  height: 100dvh;
+  background: var(--surface);
+  z-index: 1000;
+  padding: 100px 32px 40px;
+  transition: right var(--transition-slow);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav.open { right: 0; }
+
+.mobile-nav a {
+  display: block;
+  padding: 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  transition: color var(--transition);
+}
+
+.mobile-nav a:hover { color: var(--gold); }
+
+.mobile-nav .btn-mobile-cta {
+  margin-top: auto;
+  padding: 16px;
+  text-align: center;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+
+.overlay.active { opacity: 1; pointer-events: all; }
+
+/* ═══════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  min-height: 48px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+
+.btn-secondary:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border);
+}
+
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+.btn-sm { padding: 10px 20px; font-size: 13px; min-height: 40px; }
+
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1548574505-5e239809ee19?w=1920&q=80') center/cover no-repeat;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,29,58,0.5) 0%, rgba(11,29,58,0.75) 60%, rgba(11,29,58,0.9) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 120px 24px 80px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(197, 165, 90, 0.15);
+  border: 1px solid rgba(197, 165, 90, 0.4);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.hero-subtitle {
+  font-size: clamp(16px, 2.2vw, 20px);
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto 40px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-8px); }
+}
+
+.hero-scroll svg { width: 20px; height: 20px; }
+
+/* ═══════════════════════════════════════════
+   STATS / TRUST
+   ═══════════════════════════════════════════ */
+.stats {
+  padding: 80px 0;
+  background: var(--surface-alt);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .stats-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat-item { text-align: center; }
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  color: var(--ocean);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+[data-theme="dark"] .stat-number { color: var(--azure); }
+
+.stat-number .suffix {
+  font-size: 0.6em;
+  color: var(--gold);
+}
+
+.stat-label {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════════
+   SECTIONS COMMON
+   ═══════════════════════════════════════════ */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-muted);
+  margin-bottom: 16px;
+}
+
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.65;
+  margin-top: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   DEPARTMENTS — BENTO GRID
+   ═══════════════════════════════════════════ */
+.departments {
+  padding: 120px 0 100px;
+}
+
+.departments-header {
+  margin-bottom: 56px;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .bento {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+  }
+  .bento-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+  .bento-item:nth-child(4) { grid-column: span 2; }
+  .bento-item:nth-child(7) { grid-column: span 2; }
+}
+
+.bento-item {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 28px;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.bento-item:hover { transform: translateY(-4px); }
+
+.bento-item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.bento-item:hover img { transform: scale(1.05); }
+
+.bento-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(11,29,58,0.85) 0%, rgba(11,29,58,0.2) 60%, transparent 100%);
+}
+
+.bento-item-content {
+  position: relative;
+  z-index: 2;
+}
+
+.bento-item h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.bento-item p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+
+.bento-item .dept-count {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════════════════
+   HOW IT WORKS
+   ═══════════════════════════════════════════ */
+.how-it-works {
+  padding: 100px 0 120px;
+  background: var(--surface-alt);
+}
+
+.how-it-works-header { margin-bottom: 64px; }
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+}
+
+.step {
+  padding: 36px 32px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition);
+  position: relative;
+}
+
+.step:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+.step:nth-child(1) { border-top: 3px solid var(--ocean); }
+.step:nth-child(2) { border-top: 3px solid var(--gold); }
+@media (min-width: 768px) {
+  .step:nth-child(2) { margin-top: 40px; }
+  .step:nth-child(3) { margin-top: 80px; }
+}
+.step:nth-child(3) { border-top: 3px solid var(--azure); }
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+[data-theme="dark"] .step-number { color: var(--border); }
+
+.step h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.step p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ═══════════════════════════════════════════
+   CTA FULL BLEED
+   ═══════════════════════════════════════════ */
+.cta-section {
+  position: relative;
+  padding: 120px 0;
+  background: url('https://images.unsplash.com/photo-1599640842225-85d111c60e6b?w=1920&q=80') center/cover no-repeat;
+  text-align: center;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(11,29,58,0.9) 0%, rgba(27,79,114,0.85) 100%);
+}
+
+.cta-section .container { position: relative; z-index: 2; }
+
+.cta-section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.cta-section p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══════════════════════════════════════════
+   POSITIONS
+   ═══════════════════════════════════════════ */
+.positions {
+  padding: 120px 0;
+}
+
+.positions-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.filter-select {
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 44px;
+  min-width: 180px;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23718096' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.filter-select:focus { outline: none; border-color: var(--ocean); }
+
+.positions-count {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 10px 0;
+}
+
+.positions-count strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.positions-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .positions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .positions-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.position-card {
+  padding: 28px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.position-card:hover { box-shadow: var(--shadow-md); border-color: var(--border); transform: translateY(-2px); }
+
+.position-card-dept {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ocean-mid);
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .position-card-dept { color: var(--azure); }
+
+.position-card h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.position-card-level {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.position-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.position-card .btn-sm { align-self: flex-start; }
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+/* ═══════════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════════ */
+.about {
+  padding: 120px 0 100px;
+  background: var(--surface-alt);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 64px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 80px; }
+}
+
+.about-story h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.about-story p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.license-box {
+  margin-top: 40px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  border: 1.5px solid var(--gold);
+  background: linear-gradient(135deg, rgba(197,165,90,0.06) 0%, rgba(197,165,90,0.02) 100%);
+}
+
+[data-theme="dark"] .license-box {
+  background: linear-gradient(135deg, rgba(197,165,90,0.1) 0%, rgba(197,165,90,0.03) 100%);
+}
+
+.license-box h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.license-box p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.value-item {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+}
+
+.value-item h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.value-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   HOW TO APPLY
+   ═══════════════════════════════════════════ */
+.apply-section {
+  padding: 120px 0;
+}
+
+.apply-steps {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.apply-steps::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+@media (min-width: 768px) {
+  .apply-steps::before { left: 31px; }
+}
+
+.apply-step {
+  display: flex;
+  gap: 24px;
+  padding: 28px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.apply-step.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.apply-step-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: var(--ocean);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .apply-step-icon { width: 64px; height: 64px; min-width: 64px; font-size: 22px; }
+}
+
+.apply-step-content h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.apply-step-content p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Accordion */
+.accordion {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-item {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  min-height: 44px;
+  transition: background var(--transition);
+}
+
+.accordion-trigger:hover { background: var(--surface-alt); }
+
+.accordion-trigger svg {
+  width: 20px;
+  height: 20px;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+  min-width: 20px;
+}
+
+.accordion-item.active .accordion-trigger svg { transform: rotate(180deg); }
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.accordion-body-inner {
+  padding: 0 24px 20px;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════
+   CONTACT
+   ═══════════════════════════════════════════ */
+.contact {
+  padding: 100px 0 120px;
+  background: var(--surface-alt);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.contact-info-item svg {
+  width: 20px;
+  height: 20px;
+  color: var(--ocean-mid);
+  margin-top: 3px;
+  min-width: 20px;
+}
+
+[data-theme="dark"] .contact-info-item svg { color: var(--azure); }
+
+.contact-info-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.contact-info-item p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.social-link:hover { border-color: var(--ocean-mid); color: var(--ocean-mid); background: rgba(27,79,114,0.06); }
+
+.social-link svg { width: 18px; height: 18px; }
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-input {
+  padding: 12px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text-primary);
+  min-height: 44px;
+  transition: border-color var(--transition);
+}
+
+.form-input:focus { outline: none; border-color: var(--ocean); }
+
+.form-input::placeholder { color: var(--text-muted); }
+
+textarea.form-input { min-height: 120px; resize: vertical; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+.footer {
+  padding: 64px 0 32px;
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (min-width: 768px) {
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+.footer-brand .logo-text { color: #fff; }
+.footer-brand .logo svg .logo-fill { fill: #fff; }
+
+.footer-tagline {
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 12px;
+  line-height: 1.5;
+  max-width: 300px;
+}
+
+.footer-badge {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(197,165,90,0.3);
+  background: rgba(197,165,90,0.08);
+  font-size: 12px;
+  color: var(--gold-light);
+  font-weight: 500;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.footer h4 {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.footer-links a {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.5);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover { color: var(--gold-light); }
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-top: 24px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ═══════════════════════════════════════════
+   APPLICATION MODAL
+   ═══════════════════════════════════════════ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition);
+  padding: 16px;
+}
+
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.modal {
+  width: 100%;
+  max-width: 580px;
+  max-height: 90dvh;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  overflow-y: auto;
+  transform: translateY(20px) scale(0.97);
+  transition: transform var(--transition);
+  box-shadow: var(--shadow-xl);
+}
+
+.modal-overlay.active .modal { transform: translateY(0) scale(1); }
+
+.modal-header {
+  padding: 28px 28px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-header h2 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.modal-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: all var(--transition);
+  min-width: 40px;
+}
+
+.modal-close:hover { background: var(--surface-alt); color: var(--text-primary); }
+
+.modal-close svg { width: 20px; height: 20px; }
+
+/* Progress */
+.progress-bar {
+  margin: 24px 28px 0;
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 4px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 28px 0;
+}
+
+.progress-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.progress-label.active { color: var(--gold-muted); font-weight: 600; }
+
+.modal-body { padding: 28px; }
+
+.modal-step { display: none; }
+.modal-step.active { display: block; }
+
+.modal-step .form-group { margin-bottom: 16px; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.radio-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  padding: 10px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.radio-option:hover { border-color: var(--ocean-mid); }
+.radio-option.selected { border-color: var(--ocean); background: rgba(27,79,114,0.08); color: var(--ocean); }
+[data-theme="dark"] .radio-option.selected { background: rgba(52,152,219,0.15); color: var(--azure); border-color: var(--azure); }
+
+.file-upload {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.file-upload:hover { border-color: var(--ocean-mid); background: rgba(27,79,114,0.03); }
+
+.file-upload svg {
+  width: 32px;
+  height: 32px;
+  color: var(--text-muted);
+  margin: 0 auto 8px;
+}
+
+.file-upload p { font-size: 14px; color: var(--text-muted); }
+.file-upload .file-name { font-weight: 600; color: var(--ocean); margin-top: 4px; display: none; }
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 0 28px 28px;
+}
+
+.btn-back { color: var(--text-muted); font-weight: 500; padding: 10px 20px; }
+.btn-back:hover { color: var(--text-primary); }
+
+/* Success */
+.success-screen {
+  display: none;
+  text-align: center;
+  padding: 60px 28px;
+}
+
+.success-screen.active { display: block; }
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(39,174,96,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: scaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.success-icon svg { width: 40px; height: 40px; color: #27ae60; }
+
+.success-screen h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.success-screen p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════
+   CONFETTI
+   ═══════════════════════════════════════════ */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3000;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -10px;
+  animation: confettiFall 3s ease-in forwards;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE TWEAKS
+   ═══════════════════════════════════════════ */
+@media (max-width: 767px) {
+  .hero-content { padding: 100px 20px 60px; }
+  .hero-badge { font-size: 11px; padding: 8px 16px; }
+  .stats { padding: 56px 0; }
+  .departments, .positions, .apply-section { padding: 80px 0; }
+  .how-it-works, .about, .contact { padding: 80px 0; }
+  .cta-section { padding: 80px 0; }
+  .positions-header { flex-direction: column; align-items: flex-start; }
+  .filters { width: 100%; }
+  .filter-select { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path class="logo-fill" d="M8 8h6v18c0 3.3-2.7 6-6 6H6v-4h2c1.1 0 2-.9 2-2V8zm-2 24h2V8H4v20c0 2.2 1.8 4 4 4h2z" fill="#0B1D3A"/>
+        <path class="logo-accent" d="M24 8c-5.5 0-10 4.5-10 10s4.5 10 10 10c2.8 0 5.3-1.1 7.1-2.9l-2.8-2.8C27 23.4 25.6 24 24 24c-3.3 0-6-2.7-6-6s2.7-6 6-6c1.6 0 3 .6 4.2 1.7l2.8-2.8C29.3 9.1 26.8 8 24 8z" fill="#C5A55A"/>
+        <path class="logo-fill" d="M44 8l-8 24h4.5l1.6-5h9.8l1.6 5H58L50 8h-6zm-1 15l3-9.4L49 23h-6z" fill="#0B1D3A"/>
+        <text x="66" y="28" font-family="General Sans, sans-serif" font-size="10" font-weight="600" letter-spacing="0.12em" class="logo-fill" fill="#0B1D3A">RECRUITMENT</text>
+      </svg>
+    </a>
+
+    <nav class="nav-desktop">
+      <a href="#home">Home</a>
+      <a href="#positions">Posizioni</a>
+      <a href="#about">Chi Siamo</a>
+      <a href="#apply">Candidatura</a>
+      <a href="#contact">Contatti</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" onclick="toggleTheme()" aria-label="Cambia tema">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#" class="btn-header" onclick="openModal(); return false;">Candidati Ora</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#home" onclick="toggleMenu()">Home</a>
+  <a href="#positions" onclick="toggleMenu()">Posizioni</a>
+  <a href="#about" onclick="toggleMenu()">Chi Siamo</a>
+  <a href="#apply" onclick="toggleMenu()">Candidatura</a>
+  <a href="#contact" onclick="toggleMenu()">Contatti</a>
+  <a href="#" class="btn-mobile-cta" onclick="toggleMenu(); openModal();">Candidati Ora</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">✦ Unica Agenzia Italiana Ufficiale Royal Caribbean ✦</div>
+    <h1>La tua carriera <em>inizia dal mare</em></h1>
+    <p class="hero-subtitle">JCA Recruitment è il partner esclusivo in Italia per il reclutamento del personale a bordo delle navi Royal Caribbean Group. Oltre 40 ruoli disponibili.</p>
+    <div class="hero-cta">
+      <a href="#positions" class="btn btn-primary">Scopri le Posizioni</a>
+      <a href="#apply" class="btn btn-secondary">Come Candidarsi</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scorri</span>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS
+     ═══════════════════════════════════════════ -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="1200" data-suffix="+">0<span class="suffix">+</span></div>
+        <div class="stat-label">Candidati collocati</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="40" data-suffix="+">0<span class="suffix">+</span></div>
+        <div class="stat-label">Ruoli disponibili</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="8">0</div>
+        <div class="stat-label">Dipartimenti a bordo</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="15" data-suffix="">0</div>
+        <div class="stat-label">Anni di esperienza</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     DEPARTMENTS (BENTO)
+     ═══════════════════════════════════════════ -->
+<section class="departments" id="departments">
+  <div class="container">
+    <div class="departments-header reveal">
+      <div class="section-label">Dipartimenti</div>
+      <h2 class="section-title">Ogni nave, un mondo<br>di opportunità</h2>
+      <p class="section-subtitle">Dalla cucina gourmet all'intrattenimento internazionale: trova il dipartimento che fa per te.</p>
+    </div>
+    <div class="bento">
+      <div class="bento-item reveal" onclick="filterByDept('Cucina')">
+        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=75" alt="Cucina" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Cucina</h3>
+          <p>Chef, Sous Chef, Pastry Chef e altro</p>
+          <span class="dept-count">8 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Food & Beverage')">
+        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=75" alt="Food & Beverage" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Food & Beverage</h3>
+          <p>Bartender, Waiter, Sommelier</p>
+          <span class="dept-count">7 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Entertainment')">
+        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&q=75" alt="Entertainment" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Entertainment</h3>
+          <p>Cruise Director, DJ, Performers</p>
+          <span class="dept-count">5 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Housekeeping')">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d7f9d02f0?w=800&q=75" alt="Housekeeping" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Housekeeping</h3>
+          <p>Stateroom Attendant, Supervisor, Laundry</p>
+          <span class="dept-count">5 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Guest Services')">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=75" alt="Guest Services" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Guest Services</h3>
+          <p>Purser, Guest Relations, Shore Excursions</p>
+          <span class="dept-count">4 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Casino')">
+        <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?w=600&q=75" alt="Casino" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Casino</h3>
+          <p>Dealer, Supervisor, Slot Manager</p>
+          <span class="dept-count">4 posizioni →</span>
+        </div>
+      </div>
+      <div class="bento-item reveal" onclick="filterByDept('Security')">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=75" alt="Security & Deck" loading="lazy">
+        <div class="bento-item-content">
+          <h3>Security & Deck</h3>
+          <p>Security Officer, Deck Cadet, Technicians</p>
+          <span class="dept-count">6 posizioni →</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW IT WORKS
+     ═══════════════════════════════════════════ -->
+<section class="how-it-works">
+  <div class="container">
+    <div class="how-it-works-header reveal">
+      <div class="section-label">Il Processo</div>
+      <h2 class="section-title">Tre passi verso il mare</h2>
+      <p class="section-subtitle">Un percorso chiaro e supportato: dalla candidatura all'imbarco.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-number">01</div>
+        <h3>Invia la candidatura</h3>
+        <p>Compila il form con i tuoi dati, seleziona il dipartimento e il ruolo che ti interessa. Allega il tuo CV aggiornato e una lettera motivazionale. Il team JCA valuterà il tuo profilo entro 5 giorni lavorativi.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">02</div>
+        <h3>Colloquio e valutazione</h3>
+        <p>Se il tuo profilo corrisponde ai requisiti, sarai invitato a un colloquio con il nostro team. Valuteremo le competenze tecniche, la conoscenza linguistica e la motivazione. Riceverai feedback dettagliato in ogni caso.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-number">03</div>
+        <h3>Formazione e imbarco</h3>
+        <p>Una volta selezionato, ti guideremo nella preparazione documentale, nelle certificazioni obbligatorie (STCW, ENG1) e nella formazione pre-imbarco. Poi sarà tutto pronto per la tua nuova vita in mare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA FULL BLEED
+     ═══════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="reveal">Il mare non aspetta.<br>La tua carriera nemmeno.</h2>
+    <p class="reveal">Oltre 40 posizioni aperte in 8 dipartimenti. Candidati oggi e inizia il tuo viaggio con Royal Caribbean.</p>
+    <a href="#" class="btn btn-primary reveal" onclick="openModal(); return false;">Candidati Ora</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     POSITIONS
+     ═══════════════════════════════════════════ -->
+<section class="positions" id="positions">
+  <div class="container">
+    <div class="positions-header">
+      <div>
+        <div class="section-label">Opportunità</div>
+        <h2 class="section-title">Posizioni disponibili</h2>
+      </div>
+      <div class="filters">
+        <select class="filter-select" id="filterDept" onchange="filterPositions()">
+          <option value="">Tutti i dipartimenti</option>
+          <option value="Cucina">Cucina</option>
+          <option value="Food & Beverage">Food & Beverage</option>
+          <option value="Housekeeping">Housekeeping</option>
+          <option value="Guest Services">Guest Services</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Casino">Casino</option>
+          <option value="Security">Security</option>
+          <option value="Deck & Tecnico">Deck & Tecnico</option>
+        </select>
+        <select class="filter-select" id="filterLevel" onchange="filterPositions()">
+          <option value="">Tutti i livelli</option>
+          <option value="Entry">Entry Level</option>
+          <option value="Mid">Mid Level</option>
+          <option value="Senior">Senior</option>
+          <option value="Management">Management</option>
+        </select>
+      </div>
+    </div>
+    <div class="positions-count" id="positionsCount"></div>
+    <div class="positions-grid" id="positionsGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+     ═══════════════════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label reveal">Chi Siamo</div>
+    <h2 class="section-title reveal">L'eccellenza nel<br>recruiting marittimo</h2>
+    <div class="about-grid">
+      <div class="about-story reveal">
+        <h3>La nostra storia</h3>
+        <p>JCA Recruitment nasce dall'incontro tra la passione per il mondo marittimo e una profonda conoscenza del settore hospitality internazionale. Da oltre 15 anni operiamo come ponte tra i migliori talenti italiani e le più prestigiose compagnie crocieristiche del mondo.</p>
+        <p>La nostra missione è semplice: individuare, preparare e accompagnare professionisti che desiderano costruire una carriera internazionale a bordo, garantendo standard qualitativi elevati sia ai candidati sia ai nostri partner.</p>
+
+        <div class="license-box">
+          <h4>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Licenza Esclusiva
+          </h4>
+          <p>JCA Recruitment è l'unica agenzia in Italia ad essere ufficialmente autorizzata da Royal Caribbean Group come Hiring Partner esclusivo per il territorio italiano. Questa licenza attesta il nostro ruolo istituzionale nel processo di selezione e reclutamento per tutti i brand del Gruppo.</p>
+        </div>
+      </div>
+
+      <div class="values reveal">
+        <div class="value-item">
+          <h4>Eccellenza</h4>
+          <p>Ogni candidato viene valutato con i più alti standard professionali. Non cerchiamo numeri, cerchiamo talenti che faranno la differenza a bordo.</p>
+        </div>
+        <div class="value-item">
+          <h4>Trasparenza</h4>
+          <p>Processo di selezione chiaro e documentato. Ogni candidato riceve feedback dettagliato e conosce ogni fase del percorso di selezione.</p>
+        </div>
+        <div class="value-item">
+          <h4>Accompagnamento</h4>
+          <p>Non ci limitiamo a selezionare: supportiamo il candidato dalla candidatura all'imbarco, inclusa la preparazione documentale e le certificazioni.</p>
+        </div>
+        <div class="value-item">
+          <h4>Internazionalità</h4>
+          <p>Lavoriamo con un network globale. I nostri candidati operano in equipaggi internazionali, servendo ospiti di oltre 60 nazionalità diverse.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     HOW TO APPLY
+     ═══════════════════════════════════════════ -->
+<section class="apply-section" id="apply">
+  <div class="container">
+    <div class="section-label reveal">Candidatura</div>
+    <h2 class="section-title reveal">Come candidarsi</h2>
+    <p class="section-subtitle reveal">Un percorso strutturato in 5 fasi: dalla candidatura all'imbarco, sempre con il nostro supporto.</p>
+
+    <div class="apply-steps">
+      <div class="apply-step">
+        <div class="apply-step-icon">1</div>
+        <div class="apply-step-content">
+          <h3>Candidatura online</h3>
+          <p>Compila il form di candidatura indicando il ruolo desiderato, le tue esperienze e la tua motivazione. Allega un CV aggiornato in inglese.</p>
+        </div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-icon">2</div>
+        <div class="apply-step-content">
+          <h3>Screening e pre-selezione</h3>
+          <p>Il nostro team analizza ogni candidatura individualmente. Se il tuo profilo corrisponde ai requisiti, verrai contattato entro 5 giorni lavorativi per un primo colloquio conoscitivo.</p>
+        </div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-icon">3</div>
+        <div class="apply-step-content">
+          <h3>Colloquio tecnico</h3>
+          <p>Un colloquio approfondito sulle competenze specifiche del ruolo, la conoscenza linguistica (inglese B2+ richiesto) e la tua attitudine al lavoro in un ambiente internazionale.</p>
+        </div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-icon">4</div>
+        <div class="apply-step-content">
+          <h3>Preparazione documentale</h3>
+          <p>Ti assistiamo nella raccolta e preparazione di tutta la documentazione necessaria: certificato STCW, visita medica ENG1, visto di lavoro e certificazioni specifiche per il tuo ruolo.</p>
+        </div>
+      </div>
+      <div class="apply-step">
+        <div class="apply-step-icon">5</div>
+        <div class="apply-step-content">
+          <h3>Imbarco</h3>
+          <p>Formazione pre-imbarco, briefing operativo e partenza. Il nostro supporto continua anche dopo l'imbarco per garantire un inserimento sereno e produttivo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion reveal" style="margin-top: 64px;">
+      <h3 class="section-title" style="font-size: 24px; margin-bottom: 24px;">Requisiti generali</h3>
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          Età minima e documenti
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">Età minima 21 anni (18 per alcuni ruoli entry-level). È necessario possedere un passaporto valido con almeno 12 mesi di validità residua e non avere precedenti penali.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          Conoscenza linguistica
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">Inglese livello B2 o superiore (certificazione preferita ma non obbligatoria). La conoscenza di altre lingue (spagnolo, francese, tedesco) è un valore aggiunto significativo per molti ruoli a contatto con gli ospiti.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          Disponibilità e contratto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">I contratti hanno durata da 4 a 9 mesi consecutivi a bordo, seguiti da un periodo di pausa a terra. È richiesta piena disponibilità per l'intero periodo contrattuale, con possibilità di rinnovo.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          Certificazioni obbligatorie
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">Certificato STCW (Standards of Training, Certification and Watchkeeping) e visita medica ENG1 sono obbligatori prima dell'imbarco. JCA Recruitment ti guida nell'ottenimento di entrambi, indicandoti centri autorizzati e tempistiche.</div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <button class="accordion-trigger" onclick="toggleAccordion(this)">
+          Attitudine e soft skills
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="accordion-body">
+          <div class="accordion-body-inner">Cerchiamo persone con spirito di adattamento, capacità di lavorare in team multiculturali e forte orientamento al servizio. L'esperienza pregressa nel settore hospitality è un plus ma non è sempre necessaria per i ruoli entry-level.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT
+     ═══════════════════════════════════════════ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-label reveal">Contatti</div>
+    <h2 class="section-title reveal">Parliamo</h2>
+    <p class="section-subtitle reveal">Hai domande? Scrivici o vieni a trovarci. Il nostro team è a disposizione.</p>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div>
+            <h4>Sede</h4>
+            <p>Via Roma 42, 00184 Roma (RM)<br>Italia</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <h4>Email</h4>
+            <p>careers@jcarecruitment.it</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <h4>Telefono</h4>
+            <p>+39 06 123 4567</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <div>
+            <h4>Orari</h4>
+            <p>Lun — Ven: 9:00 — 18:00<br>Sab — Dom: Chiuso</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleContactForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Nome</label>
+            <input type="text" id="contactName" class="form-input" placeholder="Il tuo nome" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" class="form-input" placeholder="email@esempio.it" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactSubject">Oggetto</label>
+          <input type="text" id="contactSubject" class="form-input" placeholder="Di cosa vuoi parlare?">
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Messaggio</label>
+          <textarea id="contactMessage" class="form-input" placeholder="Scrivi il tuo messaggio..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Invia Messaggio</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+     ═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg viewBox="0 0 120 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="logo-fill" d="M8 8h6v18c0 3.3-2.7 6-6 6H6v-4h2c1.1 0 2-.9 2-2V8zm-2 24h2V8H4v20c0 2.2 1.8 4 4 4h2z" fill="#fff"/>
+            <path class="logo-accent" d="M24 8c-5.5 0-10 4.5-10 10s4.5 10 10 10c2.8 0 5.3-1.1 7.1-2.9l-2.8-2.8C27 23.4 25.6 24 24 24c-3.3 0-6-2.7-6-6s2.7-6 6-6c1.6 0 3 .6 4.2 1.7l2.8-2.8C29.3 9.1 26.8 8 24 8z" fill="#C5A55A"/>
+            <path class="logo-fill" d="M44 8l-8 24h4.5l1.6-5h9.8l1.6 5H58L50 8h-6zm-1 15l3-9.4L49 23h-6z" fill="#fff"/>
+            <text x="66" y="28" font-family="General Sans, sans-serif" font-size="10" font-weight="600" letter-spacing="0.12em" class="logo-fill" fill="#fff">RECRUITMENT</text>
+          </svg>
+        </a>
+        <p class="footer-tagline">Il tuo partner per una carriera internazionale a bordo delle navi Royal Caribbean.</p>
+        <div class="footer-badge">Autorizzata da Royal Caribbean Group come Hiring Partner ufficiale per l'Italia</div>
+      </div>
+      <div>
+        <h4>Link Rapidi</h4>
+        <div class="footer-links">
+          <a href="#home">Home</a>
+          <a href="#positions">Posizioni</a>
+          <a href="#about">Chi Siamo</a>
+          <a href="#apply">Come Candidarsi</a>
+          <a href="#contact">Contatti</a>
+        </div>
+      </div>
+      <div>
+        <h4>Dipartimenti</h4>
+        <div class="footer-links">
+          <a href="#" onclick="filterByDept('Cucina'); return false;">Cucina</a>
+          <a href="#" onclick="filterByDept('Food & Beverage'); return false;">Food & Beverage</a>
+          <a href="#" onclick="filterByDept('Entertainment'); return false;">Entertainment</a>
+          <a href="#" onclick="filterByDept('Guest Services'); return false;">Guest Services</a>
+          <a href="#" onclick="filterByDept('Housekeeping'); return false;">Housekeeping</a>
+          <a href="#" onclick="filterByDept('Casino'); return false;">Casino</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 JCA Recruitment. Tutti i diritti riservati.</span>
+      <span>Privacy Policy · Cookie Policy</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     APPLICATION MODAL
+     ═══════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Candidatura</h2>
+      <button class="modal-close" onclick="closeModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:33.3%"></div></div>
+    <div class="progress-labels">
+      <span class="progress-label active" id="pLabel1">Dati Personali</span>
+      <span class="progress-label" id="pLabel2">Posizione</span>
+      <span class="progress-label" id="pLabel3">Documenti</span>
+    </div>
+
+    <div class="modal-body" id="modalBody">
+      <!-- Step 1 -->
+      <div class="modal-step active" id="step1">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nome *</label>
+            <input type="text" class="form-input" id="appNome" placeholder="Mario" required>
+          </div>
+          <div class="form-group">
+            <label>Cognome *</label>
+            <input type="text" class="form-input" id="appCognome" placeholder="Rossi" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" class="form-input" id="appEmail" placeholder="mario.rossi@email.it" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Telefono *</label>
+            <input type="tel" class="form-input" id="appTel" placeholder="+39 333 1234567">
+          </div>
+          <div class="form-group">
+            <label>Data di nascita *</label>
+            <input type="date" class="form-input" id="appDob">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Città di residenza</label>
+          <input type="text" class="form-input" id="appCity" placeholder="Roma">
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="modal-step" id="step2">
+        <div class="form-group">
+          <label>Dipartimento *</label>
+          <select class="form-input" id="appDept" onchange="updateRoles()">
+            <option value="">Seleziona un dipartimento</option>
+            <option value="Cucina">Cucina</option>
+            <option value="Food & Beverage">Food & Beverage</option>
+            <option value="Housekeeping">Housekeeping</option>
+            <option value="Guest Services">Guest Services</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Casino">Casino</option>
+            <option value="Security">Security</option>
+            <option value="Deck & Tecnico">Deck & Tecnico</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Ruolo desiderato *</label>
+          <select class="form-input" id="appRole">
+            <option value="">Seleziona prima il dipartimento</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Anni di esperienza nel settore</label>
+          <select class="form-input" id="appExp">
+            <option value="0">Nessuna esperienza</option>
+            <option value="1-2">1-2 anni</option>
+            <option value="3-5">3-5 anni</option>
+            <option value="5+">Oltre 5 anni</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Livello di inglese *</label>
+          <div class="radio-group" id="engLevel">
+            <button type="button" class="radio-option" onclick="selectRadio(this,'engLevel')">A2</button>
+            <button type="button" class="radio-option" onclick="selectRadio(this,'engLevel')">B1</button>
+            <button type="button" class="radio-option selected" onclick="selectRadio(this,'engLevel')">B2</button>
+            <button type="button" class="radio-option" onclick="selectRadio(this,'engLevel')">C1+</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Altre lingue parlate</label>
+          <input type="text" class="form-input" id="appLangs" placeholder="Es: Spagnolo, Francese">
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="modal-step" id="step3">
+        <div class="form-group">
+          <label>Curriculum Vitae</label>
+          <div class="file-upload" onclick="simulateUpload()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p>Clicca per caricare il tuo CV</p>
+            <p class="file-name" id="fileName"></p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Lettera motivazionale</label>
+          <textarea class="form-input" id="appMotivation" placeholder="Raccontaci perché vuoi lavorare a bordo e cosa ti rende il candidato ideale..." rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Hai esperienza pregressa su navi da crociera?</label>
+          <div class="radio-group" id="prevExp">
+            <button type="button" class="radio-option" onclick="selectRadio(this,'prevExp')">Sì</button>
+            <button type="button" class="radio-option selected" onclick="selectRadio(this,'prevExp')">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-actions" id="modalActions">
+      <button class="btn-back" id="btnBack" onclick="prevStep()" style="display:none">← Indietro</button>
+      <button class="btn btn-primary" id="btnNext" onclick="nextStep()">Continua →</button>
+    </div>
+
+    <div class="success-screen" id="successScreen">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>Candidatura inviata!</h3>
+      <p>Grazie per il tuo interesse. Il nostro team esaminerà la tua candidatura e ti contatterà entro 5 giorni lavorativi.</p>
+      <button class="btn btn-outline" onclick="closeModal()" style="margin-top: 24px;">Chiudi</button>
+    </div>
+  </div>
+</div>
+
+<div class="confetti-container" id="confettiContainer"></div>
+
+<script>
+/* ═══════════════════════════════════════════
+   POSITIONS DATA
+   ═══════════════════════════════════════════ */
+const positions = [
+  { title: "Executive Chef", dept: "Cucina", level: "Management", desc: "Supervisione dell'intera brigata di cucina a bordo. Responsabile della pianificazione dei menù, della qualità e degli standard igienico-sanitari." },
+  { title: "Sous Chef", dept: "Cucina", level: "Senior", desc: "Braccio destro dell'Executive Chef. Coordina le stazioni, gestisce la produzione giornaliera e supervisiona il team di cucina." },
+  { title: "Chef de Partie", dept: "Cucina", level: "Mid", desc: "Responsabile di una stazione specifica della cucina. Prepara i piatti secondo gli standard Royal Caribbean e forma i commis." },
+  { title: "Commis Chef", dept: "Cucina", level: "Entry", desc: "Supporta lo Chef de Partie nella preparazione. Ruolo ideale per chi inizia la carriera in cucina con ambizione internazionale." },
+  { title: "Pastry Chef", dept: "Cucina", level: "Mid", desc: "Creazione di dessert, pasticceria e prodotti da forno per i ristoranti di bordo e gli eventi speciali." },
+  { title: "Baker", dept: "Cucina", level: "Mid", desc: "Produzione quotidiana di pane, focacce e lievitati per tutti i punti ristoro della nave." },
+  { title: "Butcher", dept: "Cucina", level: "Mid", desc: "Preparazione e porzionatura di carni e pesce per l'intera nave. Gestione delle celle frigorifere e controllo qualità." },
+  { title: "Demi Chef de Partie", dept: "Cucina", level: "Entry", desc: "Assistente dello Chef de Partie, con responsabilità crescenti nella gestione della stazione e nella preparazione dei piatti." },
+  { title: "Head Waiter", dept: "Food & Beverage", level: "Senior", desc: "Gestione di una sezione del ristorante principale. Coordina il team di camerieri e garantisce un servizio impeccabile agli ospiti." },
+  { title: "Waiter", dept: "Food & Beverage", level: "Entry", desc: "Servizio ai tavoli nei ristoranti di bordo. Accoglienza ospiti, presa comande e conoscenza del menù in inglese." },
+  { title: "Assistant Waiter", dept: "Food & Beverage", level: "Entry", desc: "Supporto al cameriere principale. Gestione mise en place, servizio bevande e assistenza durante il pasto." },
+  { title: "Bartender", dept: "Food & Beverage", level: "Mid", desc: "Preparazione cocktail e drink nei bar di bordo. Richiesta conoscenza della mixology e capacità di intrattenimento." },
+  { title: "Barista", dept: "Food & Beverage", level: "Entry", desc: "Preparazione caffè specialty e bevande calde nei coffee bar della nave. Latte art e conoscenza delle origini." },
+  { title: "Bar Server", dept: "Food & Beverage", level: "Entry", desc: "Servizio bevande nelle aree bar e pool deck. Velocità, cortesia e capacità di lavorare in ambienti dinamici." },
+  { title: "Sommelier", dept: "Food & Beverage", level: "Senior", desc: "Consulenza enologica nei ristoranti premium. Gestione della carta vini, abbinamenti e formazione del team F&B." },
+  { title: "Executive Housekeeper", dept: "Housekeeping", level: "Management", desc: "Direzione dell'intero reparto housekeeping. Supervisione di oltre 100 addetti, gestione degli standard e degli inventari." },
+  { title: "Housekeeping Supervisor", dept: "Housekeeping", level: "Senior", desc: "Coordinamento di un team di stateroom attendant. Ispezioni qualità, gestione turni e risoluzione delle richieste ospiti." },
+  { title: "Stateroom Attendant", dept: "Housekeeping", level: "Entry", desc: "Pulizia e riordino delle cabine ospiti. Servizio di turndown, gestione biancheria e attenzione ai dettagli." },
+  { title: "Public Area Attendant", dept: "Housekeeping", level: "Entry", desc: "Mantenimento della pulizia e dell'ordine nelle aree comuni della nave: lobby, corridoi, ristoranti e spazi eventi." },
+  { title: "Laundry Supervisor", dept: "Housekeeping", level: "Mid", desc: "Gestione della lavanderia di bordo. Coordinamento del team, controllo qualità e manutenzione dei macchinari." },
+  { title: "Guest Services Officer", dept: "Guest Services", level: "Mid", desc: "Punto di riferimento per gli ospiti alla reception. Gestione check-in/check-out, richieste speciali e informazioni di bordo." },
+  { title: "Purser", dept: "Guest Services", level: "Senior", desc: "Responsabile delle operazioni amministrative di bordo. Gestione documenti, contabilità e supervisione del team Guest Services." },
+  { title: "Shore Excursions Manager", dept: "Guest Services", level: "Senior", desc: "Pianificazione e gestione delle escursioni a terra. Coordinamento con operatori locali e assistenza agli ospiti durante le soste." },
+  { title: "Guest Relations Officer", dept: "Guest Services", level: "Mid", desc: "Gestione dei feedback e delle richieste speciali degli ospiti VIP e suite. Risoluzione problemi e fidelizzazione." },
+  { title: "Cruise Director", dept: "Entertainment", level: "Management", desc: "Direttore dell'intrattenimento a bordo. Pianifica e presenta gli eventi, coordina artisti e animatori, è il volto della nave." },
+  { title: "Youth Staff", dept: "Entertainment", level: "Entry", desc: "Animazione e supervisione dei programmi per bambini e ragazzi. Organizzazione attività, giochi e laboratori creativi." },
+  { title: "Sound & Light Technician", dept: "Entertainment", level: "Mid", desc: "Gestione tecnica di audio e luci per gli spettacoli del teatro di bordo e gli eventi nelle aree comuni." },
+  { title: "Stage Manager", dept: "Entertainment", level: "Mid", desc: "Coordinamento tecnico degli spettacoli teatrali. Gestione scenografie, prove e programmazione degli show serali." },
+  { title: "DJ", dept: "Entertainment", level: "Mid", desc: "Intrattenimento musicale nei locali e durante gli eventi a bordo. Selezione musicale internazionale e interazione con il pubblico." },
+  { title: "Casino Dealer", dept: "Casino", level: "Entry", desc: "Gestione dei tavoli da gioco: blackjack, poker, roulette. Formazione specifica fornita a bordo per i candidati senza esperienza." },
+  { title: "Casino Supervisor", dept: "Casino", level: "Senior", desc: "Supervisione delle operazioni al tavolo. Gestione del team dealer, controllo procedure e assistenza ospiti VIP." },
+  { title: "Casino Cashier", dept: "Casino", level: "Entry", desc: "Operazioni di cassa del casinò. Cambio fiches, gestione contabile e assistenza agli ospiti nelle transazioni di gioco." },
+  { title: "Slot Manager", dept: "Casino", level: "Mid", desc: "Gestione dell'area slot machine. Manutenzione, pagamenti, reportistica e assistenza tecnica agli ospiti." },
+  { title: "Security Officer", dept: "Security", level: "Mid", desc: "Sicurezza a bordo: pattugliamento, controllo accessi, gestione emergenze e applicazione delle procedure ISPS." },
+  { title: "Chief Security Officer", dept: "Security", level: "Management", desc: "Responsabile della sicurezza dell'intera nave. Coordinamento del team, gestione crisi e conformità alle normative internazionali." },
+  { title: "CCTV Operator", dept: "Security", level: "Entry", desc: "Monitoraggio dei sistemi di videosorveglianza. Segnalazione anomalie, supporto alle indagini e documentazione incidenti." },
+  { title: "Deck Cadet", dept: "Deck & Tecnico", level: "Entry", desc: "Formazione pratica sul ponte. Supporto alla navigazione, manutenzione e operazioni marittime sotto supervisione degli ufficiali." },
+  { title: "Electrician", dept: "Deck & Tecnico", level: "Mid", desc: "Manutenzione degli impianti elettrici di bordo. Diagnostica, riparazione e installazione di sistemi elettrici marini." },
+  { title: "HVAC Technician", dept: "Deck & Tecnico", level: "Mid", desc: "Gestione dei sistemi di climatizzazione. Manutenzione preventiva, riparazione e ottimizzazione degli impianti HVAC della nave." },
+  { title: "Plumber", dept: "Deck & Tecnico", level: "Mid", desc: "Manutenzione degli impianti idraulici di bordo. Riparazione, installazione e gestione dei sistemi idrici e sanitari." },
+  { title: "IT Officer", dept: "Deck & Tecnico", level: "Mid", desc: "Gestione dell'infrastruttura IT di bordo. Supporto tecnico, reti, sistemi di comunicazione e assistenza agli ospiti per il Wi-Fi." },
+  { title: "Safety Officer", dept: "Deck & Tecnico", level: "Senior", desc: "Responsabile della sicurezza operativa. Gestione delle esercitazioni, ispezioni e conformità agli standard IMO e SOLAS." },
+];
+
+/* ═══════════════════════════════════════════
+   RENDER POSITIONS
+   ═══════════════════════════════════════════ */
+function renderPositions(filtered) {
+  const grid = document.getElementById('positionsGrid');
+  const count = document.getElementById('positionsCount');
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results">Nessuna posizione trovata con i filtri selezionati.</div>';
+    count.innerHTML = '<strong>0</strong> posizioni trovate';
+    return;
+  }
+
+  count.innerHTML = `<strong>${filtered.length}</strong> posizioni trovate`;
+  grid.innerHTML = filtered.map(p => `
+    <div class="position-card">
+      <div class="position-card-dept">${p.dept}</div>
+      <h3>${p.title}</h3>
+      <div class="position-card-level">${p.level} Level</div>
+      <p>${p.desc}</p>
+      <button class="btn btn-sm btn-outline" onclick="openModalWithRole('${p.dept}','${p.title}')">Candidati →</button>
+    </div>
+  `).join('');
+}
+
+function filterPositions() {
+  const dept = document.getElementById('filterDept').value;
+  const level = document.getElementById('filterLevel').value;
+  let filtered = positions;
+  if (dept) filtered = filtered.filter(p => p.dept === dept);
+  if (level) filtered = filtered.filter(p => p.level === level);
+  renderPositions(filtered);
+}
+
+function filterByDept(dept) {
+  document.getElementById('filterDept').value = dept;
+  document.getElementById('filterLevel').value = '';
+  filterPositions();
+  document.getElementById('positions').scrollIntoView({ behavior: 'smooth' });
+}
+
+renderPositions(positions);
+
+/* ═══════════════════════════════════════════
+   HEADER SCROLL
+   ═══════════════════════════════════════════ */
+let lastScroll = 0;
+window.addEventListener('scroll', () => {
+  const header = document.getElementById('header');
+  header.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+/* ═══════════════════════════════════════════
+   THEME TOGGLE
+   ═══════════════════════════════════════════ */
+function toggleTheme() {
+  const html = document.documentElement;
+  const current = html.getAttribute('data-theme');
+  html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+}
+
+/* ═══════════════════════════════════════════
+   MOBILE MENU
+   ═══════════════════════════════════════════ */
+function toggleMenu() {
+  const nav = document.getElementById('mobileNav');
+  const overlay = document.getElementById('overlay');
+  const hamburger = document.querySelector('.hamburger');
+  nav.classList.toggle('open');
+  overlay.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+}
+
+/* ═══════════════════════════════════════════
+   ACCORDION
+   ═══════════════════════════════════════════ */
+function toggleAccordion(trigger) {
+  const item = trigger.parentElement;
+  const body = item.querySelector('.accordion-body');
+  const isActive = item.classList.contains('active');
+
+  document.querySelectorAll('.accordion-item.active').forEach(el => {
+    el.classList.remove('active');
+    el.querySelector('.accordion-body').style.maxHeight = '0';
+  });
+
+  if (!isActive) {
+    item.classList.add('active');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL + COUNT-UP
+   ═══════════════════════════════════════════ */
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      const nums = entry.target.querySelectorAll('[data-target]');
+      nums.forEach(animateNumber);
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal, .apply-step').forEach(el => revealObserver.observe(el));
+
+function animateNumber(el) {
+  if (el.dataset.animated) return;
+  el.dataset.animated = 'true';
+  const target = parseInt(el.dataset.target);
+  const suffix = el.dataset.suffix || '';
+  const duration = 2000;
+  const start = performance.now();
+
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(eased * target);
+    el.innerHTML = current + (suffix ? `<span class="suffix">${suffix}</span>` : '');
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+/* ═══════════════════════════════════════════
+   APPLICATION MODAL
+   ═══════════════════════════════════════════ */
+let currentStep = 1;
+
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+  resetModal();
+}
+
+function openModalWithRole(dept, role) {
+  openModal();
+  setTimeout(() => {
+    currentStep = 1;
+    nextStep();
+    document.getElementById('appDept').value = dept;
+    updateRoles();
+    setTimeout(() => { document.getElementById('appRole').value = role; }, 50);
+  }, 100);
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function resetModal() {
+  currentStep = 1;
+  updateModalStep();
+  document.getElementById('successScreen').classList.remove('active');
+  document.getElementById('modalBody').style.display = 'block';
+  document.getElementById('modalActions').style.display = 'flex';
+  document.querySelectorAll('.modal .form-input').forEach(el => el.value = '');
+  document.querySelector('.file-name').style.display = 'none';
+}
+
+function updateModalStep() {
+  document.querySelectorAll('.modal-step').forEach((s, i) => {
+    s.classList.toggle('active', i === currentStep - 1);
+  });
+  document.getElementById('progressFill').style.width = (currentStep * 33.3) + '%';
+  document.getElementById('btnBack').style.display = currentStep > 1 ? '' : 'none';
+  document.getElementById('btnNext').textContent = currentStep === 3 ? 'Invia Candidatura' : 'Continua →';
+
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById('pLabel' + i).classList.toggle('active', i <= currentStep);
+  }
+}
+
+function nextStep() {
+  if (currentStep < 3) {
+    currentStep++;
+    updateModalStep();
+  } else {
+    submitApplication();
+  }
+}
+
+function prevStep() {
+  if (currentStep > 1) {
+    currentStep--;
+    updateModalStep();
+  }
+}
+
+function submitApplication() {
+  document.getElementById('modalBody').style.display = 'none';
+  document.getElementById('modalActions').style.display = 'none';
+  document.getElementById('successScreen').classList.add('active');
+  document.querySelector('.progress-bar').style.display = 'none';
+  document.querySelector('.progress-labels').style.display = 'none';
+  launchConfetti();
+}
+
+/* ═══════════════════════════════════════════
+   FORM HELPERS
+   ═══════════════════════════════════════════ */
+function updateRoles() {
+  const dept = document.getElementById('appDept').value;
+  const roleSelect = document.getElementById('appRole');
+  const roles = positions.filter(p => p.dept === dept).map(p => p.title);
+  roleSelect.innerHTML = roles.length
+    ? roles.map(r => `<option value="${r}">${r}</option>`).join('')
+    : '<option value="">Seleziona prima il dipartimento</option>';
+}
+
+function selectRadio(btn, groupId) {
+  document.querySelectorAll(`#${groupId} .radio-option`).forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+function simulateUpload() {
+  const fileName = document.getElementById('fileName');
+  fileName.textContent = 'CV_Mario_Rossi.pdf';
+  fileName.style.display = 'block';
+}
+
+function handleContactForm(e) {
+  e.preventDefault();
+  alert('Messaggio inviato! Ti risponderemo al più presto.');
+  e.target.reset();
+}
+
+/* ═══════════════════════════════════════════
+   CONFETTI
+   ═══════════════════════════════════════════ */
+function launchConfetti() {
+  const container = document.getElementById('confettiContainer');
+  const colors = ['#C5A55A', '#1B4F72', '#3498DB', '#D4B96E', '#0B1D3A', '#27ae60'];
+  for (let i = 0; i < 60; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDelay = Math.random() * 1.5 + 's';
+    piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+    piece.style.width = (6 + Math.random() * 8) + 'px';
+    piece.style.height = (6 + Math.random() * 8) + 'px';
+    piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+    container.appendChild(piece);
+  }
+  setTimeout(() => { container.innerHTML = ''; }, 4000);
+}
+</script>
+
+</body>
+</html>
